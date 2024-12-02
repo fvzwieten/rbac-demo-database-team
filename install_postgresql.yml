@@ -1,0 +1,14 @@
+---
+- name: Install and start PostGreSQL
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure the postgresql-server package is installed
+      ansible.builtin.package:
+        name: postgresql-server
+        state: present
+    - name: Start the postgresql-server service if needed
+      ansible.builtin.service:
+        name: postgresql-server
+        state: started
+        enabled: true
