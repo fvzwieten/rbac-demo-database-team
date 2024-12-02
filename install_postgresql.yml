@@ -7,8 +7,3 @@
       ansible.builtin.package:
         name: postgresql-server
         state: present
-    - name: Start the postgresql-server service if needed
-      ansible.builtin.service:
-        name: postgresql-server
-        state: started
-        enabled: true
